@@ -53,6 +53,25 @@ app.get("/api/v1/genetic-diseases/:id", (req, res) => {
   });
 });
 
+//Endpoint para actualizar una enfermedad
+app.patch("/api/v1/genetic-diseases/:id", (req, res) => {
+  const { id } = req.params;
+
+  return res.status(200).json({
+    message: "method patch updateOne",
+    id, //Puede ir solo id sin el : ya que solo tiene una cosa que desestructurar
+  });
+});
+
+app.delete("/api/v1/genetic-diseases/:id", (req, res) => {
+  const { id } = req.params;
+
+  return res.status(200).json({
+    message: "method delete eliminateOne",
+    id,
+  });
+});
+
 app.listen(3000, () => {
   console.log("El servidor esta escuchando en el puerto 4000");
 });
